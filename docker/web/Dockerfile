@@ -1,4 +1,4 @@
-FROM php:8.3.20-apache-bullseye
+FROM php:8.3.20-apache-bookworm
 
 ARG DEBIAN_FRONTEND=noninteractive
 
