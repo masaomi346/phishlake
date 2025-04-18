@@ -5,13 +5,6 @@ It is based on [zerofox-oss/phishpond](https://github.com/zerofox-oss/phishpond)
 
 It's a pre-built docker environment which allows you to quickly, easily and safely spin up phishing kits for analysis. Out of the box you can browse, "mitm" web traffic, log mail calls to flat files and debug PHP code remotely.
 
-## Changed
-PHP 7.4.x -> 8.3.x
-
-mysql 5.7.x  -> 8.4.x
-
-FireFox 119.0.x  -> 136.0.x
-
 ## How to use
 1. `git clone https://github.com/masaomi346/phishpond-chromium.git`
 2. Place phishing kit on `./phishpond/www/`.
