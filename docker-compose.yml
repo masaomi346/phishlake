@@ -5,7 +5,7 @@ services:
     depends_on:
       - mitmproxy
     container_name: 'webserver'
-    hostname: 'phishpond.local'
+    hostname: 'phishlake.local'
     restart: 'always'
     environment:
       - http_proxy=http://mitmproxy:8080
@@ -20,17 +20,17 @@ services:
       - ./configs/php/php.ini:/usr/local/etc/php/php.ini
       - ./configs/php/patch.php:/usr/local/bin/patch.php
       - ./configs/php/unpatch.php:/usr/local/bin/unpatch.php
-      - ./logs:/var/log/phishpond/
+      - ./logs:/var/log/phishlake/
       - mitm-volume:/usr/local/share/ca-certificates/extra/
     command: >
       bash -c "cp /usr/local/share/ca-certificates/extra/mitmproxy-ca-cert.{pem,crt} &&
       update-ca-certificates --verbose &&
-      chmod -R 777 /var/log/phishpond &&
+      chmod -R 777 /var/log/phishlake &&
       apache2-foreground"
     networks:
-      phishpond_network:
+      phishlake_network:
         aliases:
-          - phishpond.local
+          - phishlake.local
 
   mitmproxy:
     build:
@@ -48,7 +48,7 @@ services:
       - ./configs/mitmproxy/config.yaml:/home/mitmproxy/.mitmproxy/config.yaml
       - ./logs:/home/mitmproxy/logs
     networks:
-      - phishpond_network
+      - phishlake_network
 
   browser:
     image: lscr.io/linuxserver/chromium:latest
@@ -66,7 +66,7 @@ services:
       - mitmproxy
       - webserver
     networks:
-      - phishpond_network
+      - phishlake_network
     environment:
       - PUID=1000
       - PGID=1000
@@ -88,8 +88,8 @@ services:
     container_name: 'db'
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: phishpond_db
-      MYSQL_USER: phishpond
+      MYSQL_DATABASE: phishlake_db
+      MYSQL_USER: phishlake
       MYSQL_PASSWORD: password
 
 volumes:
@@ -98,4 +98,4 @@ volumes:
   db_data:
 
 networks:
-  phishpond_network:
+  phishlake_network:
