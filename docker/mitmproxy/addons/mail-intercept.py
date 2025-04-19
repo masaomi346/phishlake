@@ -13,7 +13,7 @@ from mitmproxy import ctx, http
 class MailIntercept:
 
     def request(self, flow) -> None:
-        if flow.request.pretty_url == "http://mail.capture.phishpond/":
+        if flow.request.pretty_url == "http://mail.capture.phishlake/":
             flow.response = http.HTTPResponse.make(
                 200,  
                 b"Mail data logged",  
