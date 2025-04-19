@@ -51,10 +51,11 @@ services:
       - phishlake_network
 
   browser:
-    image: lscr.io/linuxserver/chromium:latest
+    build:
+      context: ./docker/docker-chromium
+      shm_size: '2gb'
     ports:
       - "3000:3000"
-    shm_size: "2gb"
     container_name: 'chromium'
     volumes:
       - browser-volume:/config:rw
@@ -73,9 +74,6 @@ services:
       - http_proxy=http://mitmproxy:8080
       - https_proxy=http://mitmproxy:8080
       - CHROME_OPTS=--proxy-server="http=mitmproxy:8080;https=mitmproxy:8080" --disable-features=CaptivePortalDetection
-      - DOCKER_MODS=linuxserver/mods:universal-package-install 
-      - INSTALL_PACKAGES=fonts-noto-cjk
-      - LC_ALL=en_US.UTF-8
     restart: unless-stopped
 
   db:
