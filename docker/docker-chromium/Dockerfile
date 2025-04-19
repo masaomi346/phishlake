@@ -18,7 +18,8 @@ RUN \
   apt-get update && \
   apt-get install -y --no-install-recommends \
     chromium \
-    chromium-l10n && \
+    chromium-l10n \
+    fonts-noto-cjk && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
   rm -rf \
