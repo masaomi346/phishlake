@@ -18,9 +18,10 @@ It's a pre-built docker environment which allows you to quickly, easily and safe
 (First time setup)
 1. Open preferences within the virtual browser
 2. Setting -> Privacy and Security -> Security -> Manage certificates
-3. Click Import
-4. Import `/config/certs/mitmproxy-ca-cert.pem`
-5. Tick `Trust this CA to identify websites`
-6. OK
+3. Tab `Authorities`
+4. Click Import
+5. Import `/config/certs/mitmproxy-ca-cert.pem`
+6. Tick `Trust this certificate for identifying websites`
+7. OK
 
 You will need to repeat these steps every time you remove the `browser-volume`
