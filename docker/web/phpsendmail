@@ -1,7 +1,7 @@
 #!/usr/local/bin/php
 <?php
 	// Set log file location from mounted volume
-	$logfile = '/var/log/phishpond/mail.log';
+	$logfile = '/var/log/phishlake/mail.log';
 	// Set timestamp for entry
 	$date = "[". date('Y-m-d H:i:s') . "] ";
 	$log_output = $date . "\n";
@@ -17,7 +17,7 @@
 	}
 
 	# POST message
-	$url = "http://mail.capture.phishpond/";
+	$url = "http://mail.capture.phishlake/";
 	$data = [
 		'message' => $post_output
 	];
