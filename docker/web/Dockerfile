@@ -67,7 +67,7 @@ COPY .bashrc /root/.bashrc
 
 # Generate cert
 RUN mkdir -p /etc/apache2/ssl/
-RUN openssl req -new -newkey rsa:4096 -days 3650 -nodes -x509 -subj "/C=US/ST=./L=./O=./CN=phishpond.local" -keyout /etc/apache2/ssl/ssl.key -out /etc/apache2/ssl/ssl.crt
+RUN openssl req -new -newkey rsa:4096 -days 3650 -nodes -x509 -subj "/C=US/ST=./L=./O=./CN=phishlake.local" -keyout /etc/apache2/ssl/ssl.key -out /etc/apache2/ssl/ssl.crt
 
 # Enable apache modules
 RUN a2enmod proxy_http
