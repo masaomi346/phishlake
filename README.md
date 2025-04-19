@@ -23,7 +23,7 @@ Chromium Browser + mitmproxy
 2. Setting -> Privacy and Security -> Security -> Manage certificates
 3. Tab `Authorities`
 4. Click Import
-5. Import `/config/certs/mitmproxy-ca-cert.pem`
+5. Import `/home/cert/mitmproxy-ca-cert.pem`
 6. Tick `Trust this certificate for identifying websites`
 7. OK
 
