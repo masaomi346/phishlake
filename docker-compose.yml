@@ -54,7 +54,6 @@ services:
     image: lscr.io/linuxserver/chromium:latest
     ports:
       - "3000:3000"
-      - "3001:3001"
     shm_size: "2gb"
     container_name: 'chromium'
     volumes:
