@@ -65,8 +65,6 @@ services:
     links:
       - mitmproxy
       - webserver
-    command: > 
-      bash -c "apt install -y --no-install-recommends fonts-noto-cjk"
     networks:
       - phishlake_network
     environment:
@@ -78,6 +76,7 @@ services:
       - CHROME_OPTS=--proxy-server="http=mitmproxy:8080;https=mitmproxy:8080" --disable-features=CaptivePortalDetection
       - DOCKER_MODS=linuxserver/mods:universal-package-install 
       - INSTALL_PACKAGES=fonts-noto-cjk
+      - LC_ALL=en_US.UTF-8
     restart: unless-stopped
 
   db:
