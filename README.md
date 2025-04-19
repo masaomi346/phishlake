@@ -6,6 +6,8 @@ It is based on [phishpond](https://github.com/zerofox-oss/phishpond).
 
 It's a pre-built docker environment which allows you to quickly, easily and safely spin up phishing kits for analysis. Out of the box you can browse, "mitm" web traffic, log mail calls to flat files and debug PHP code remotely.
 
+Chromium Browser + mitmproxy
+
 ## How to use
 1. `git clone https://github.com/masaomi346/phishlake.git`
 2. Place phishing kit on `./phishlake/www/`.
