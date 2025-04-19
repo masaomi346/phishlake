@@ -12,7 +12,7 @@ It's a pre-built docker environment which allows you to quickly, easily and safe
 4. Configure any db connection strings within `docker-compose.yml`
 5. Run `docker compose up -d`
 6. Browse to `http://localhost:3000` for the virtual browser
-7. Browse to `http://localhost:8080` for mitmproxy
+7. Browse to `http://localhost:8080` for mitmproxy (password:mitmproxy)
 8. Within the virtual browser navigate to `http://phishpond.local`
 
 (First time setup)
