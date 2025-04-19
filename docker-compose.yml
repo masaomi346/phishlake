@@ -40,7 +40,7 @@ services:
     container_name: 'mitmproxy'
     restart: 'always'
     command: > 
-      bash -c "mitmweb --web-host 0.0.0.0 --set confdir=/home/mitmproxy/.mitmproxy --set relax_http_form_validation --set web_password=mitmweb --set ignore-hosts='(.*\.google\.com|.*\.googleapis\.com|.*\.me\.gvt1\.com)' &&
+      bash -c "mitmweb --web-host 0.0.0.0 --set confdir=/home/mitmproxy/.mitmproxy --set relax_http_form_validation --set web_password=mitmweb --set ignore-hosts=.*\.google\.com --set ignore-hosts=.*\.googleapis\.com --set ignore-hosts=.*\.me\.gvt1\.com &&
       chmod -R 777 /home/mitmproxy/logs/"
     ports:
       - "8080:8081"
