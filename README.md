@@ -9,6 +9,7 @@ It's a pre-built docker environment which allows you to quickly, easily and safe
 Chromium Browser + mitmproxy
 
 ## How to use
+### Docker Compose
 1. `git clone https://github.com/masaomi346/phishlake.git`
 2. Place phishing kit on `./phishlake/www/`.
 3. `cd ./phishlake/`
@@ -18,7 +19,7 @@ Chromium Browser + mitmproxy
 7. Browse to `http://localhost:8080` for mitmproxy (password:mitmweb)
 8. Within the virtual browser navigate to `http://phishlake.local`
 
-(First time setup)
+### Certificates setup
 1. Open preferences within the virtual browser
 2. Setting -> Privacy and Security -> Security -> Manage certificates
 3. Tab `Authorities`
