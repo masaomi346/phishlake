@@ -1,5 +1,6 @@
 scripts: [
     '/home/mitmproxy/addons/block-telegram.py',
-    '/home/mitmproxy/addons/mail-intercept.py'
+    '/home/mitmproxy/addons/mail-intercept.py',
+    '/home/mitmproxy/addons/ipinfo.py'
 ]
 ssl_insecure: true
