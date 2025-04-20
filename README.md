@@ -1,8 +1,7 @@
 <p align="center"><img src="./logo.png"></p>
 
 ## What is phishlake?
-phishlake is phishing kit analysis tool.
-It is based on [phishpond](https://github.com/zerofox-oss/phishpond).
+phishlake is phishing kit analysis tool based on [phishpond](https://github.com/zerofox-oss/phishpond).
 
 It's a pre-built docker environment which allows you to quickly, easily and safely spin up phishing kits for analysis. Out of the box you can browse, "mitm" web traffic, log mail calls to flat files and debug PHP code remotely.
 
