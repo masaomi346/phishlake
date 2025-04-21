@@ -34,7 +34,7 @@ class IPInfo:
                 data['time'] = time.strftime("%Y-%m-%d %H:%M:%S")
                 data['url'] = flow.request.pretty_url
                 data['response'] = flow.response.get_text()
-                with open(self.outfile, 'a') as fd:
+                with open(self.outfile, 'a', encoding='utf-8') as fd:
                     json.dump(data, fd)
                     fd.write('\n')
                 break
