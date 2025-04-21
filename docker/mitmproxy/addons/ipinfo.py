@@ -26,8 +26,8 @@ class IPInfo:
         )
 
     def response(self, flow):
-        ipgeo_domain = ['geoiptool.com','api.ipregistry.co','ipinfo.io','geoplugin.net']
-        for domain in ipgeo_domain:
+        ipinfo_domain = ['ip-api.com','geoiptool.com','api.ipregistry.co','ipinfo.io','geoplugin.net','extreme-ip-lookup.com','blackbox.ipinfo.app']
+        for domain in ipinfo_domain:
             if flow.request.pretty_host.endswith(domain):
                 time = datetime.datetime.now()
                 data = {}
