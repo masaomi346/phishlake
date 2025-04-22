@@ -34,19 +34,12 @@ RUN apt -y update && \
     rm -rf /var/lib/apt/lists/* && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Install xdebug
+# Install xdebug, uopz
 RUN pecl install xdebug-3.4.2 && \
-    docker-php-ext-enable xdebug 
-
-## Install runkit
-#RUN pecl install runkit7-4.0.0a2 && \
-#    docker-php-ext-enable runkit7
-
-# Install uopz
-RUN pecl install uopz-7.1.1 && \
+    docker-php-ext-enable xdebug && \
+    pecl install uopz-7.1.1 && \
     docker-php-ext-enable uopz 
 
-	
 # Install imagick
 RUN apt update && \
     apt -y --no-install-recommends install --fix-missing libmagickwand-dev && \
@@ -66,20 +59,16 @@ COPY ioncube_loader_lin_8.3.so /usr/local/ioncube
 COPY .bashrc /root/.bashrc
 
 # Generate cert
-RUN mkdir -p /etc/apache2/ssl/
-RUN openssl req -new -newkey rsa:4096 -days 3650 -nodes -x509 -subj "/C=US/ST=./L=./O=./CN=phishlake.local" -keyout /etc/apache2/ssl/ssl.key -out /etc/apache2/ssl/ssl.crt
+RUN mkdir -p /etc/apache2/ssl/ && \
+    openssl req -new -newkey rsa:4096 -days 3650 -nodes -x509 -subj "/C=US/ST=./L=./O=./CN=phishlake.local" -keyout /etc/apache2/ssl/ssl.key -out /etc/apache2/ssl/ssl.crt
 
 # Enable apache modules
-RUN a2enmod proxy_http
-RUN a2enmod rewrite headers
-RUN a2enmod dump_io
-RUN a2enmod ssl
-
+RUN a2enmod proxy_http && \
+    a2enmod rewrite headers && \
+    a2enmod dump_io && \
+    a2enmod ssl
 
 # Copy in mail wrapper script
 COPY phpsendmail /usr/local/bin/phpsendmail
-RUN chmod +x /usr/local/bin/phpsendmail
-
-# Cleanup
-RUN rm -rf /usr/src/*
-
+RUN chmod +x /usr/local/bin/phpsendmail && \
+    rm -rf /usr/src/*
